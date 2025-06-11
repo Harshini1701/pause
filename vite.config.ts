@@ -1,6 +1,7 @@
+import path from "path"
+import tailwindcss from "@tailwindcss/vite"
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
-import tailwindcss from '@tailwindcss/vite'
 import { VitePWA } from 'vite-plugin-pwa'
 import { TanStackRouterVite } from "@tanstack/router-plugin/vite"
 
@@ -34,4 +35,9 @@ export default defineConfig({
       
 
     }),],
+    resolve: {
+    alias: {
+      "@": path.resolve(__dirname, "./src"),
+    },
+  },
 })
